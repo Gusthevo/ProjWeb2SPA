@@ -22,6 +22,15 @@ public class User {
 
     private String usuario;
     private String password;
+    private String gender;
+
+ public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     public int getId() {
         return id;
