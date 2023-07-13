@@ -1,5 +1,6 @@
 package com.example.loginpage.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,27 +11,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "usuario")
 @AllArgsConstructor
 @Data
 @NoArgsConstructor
+@Table(name = "usuario1")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String email;
-
     private String usuario;
     private String password;
+    private String confirm_password;
     private String gender;
-
- public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
 
     public int getId() {
         return id;
@@ -40,12 +33,12 @@ public class User {
         this.id = id;
     }
 
-    public String getPassword() {
-        return password;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUsuario() {
@@ -56,11 +49,28 @@ public class User {
         this.usuario = usuario;
     }
 
-    public void getEmail(String email) {
-        this.email = email;
+    public String getPassword() {
+        return password;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getConfirmPassword() {
+        return confirm_password;
+    }
+
+    public void setConfirmPassword(String confirm_password) {
+        this.confirm_password = confirm_password;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }
+

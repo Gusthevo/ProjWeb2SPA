@@ -9,8 +9,8 @@ import com.example.loginpage.repositories.MessageRepository;
 import java.util.List;
 
 @RestController
-@RequestMapping("/chat")
-@CrossOrigin(origins = "http://localhost:4200/chat")
+@RequestMapping("/user")
+@CrossOrigin
 public class MessageController {
 
     private final MessageRepository messageRepository;
@@ -20,12 +20,12 @@ public class MessageController {
         this.messageRepository = messageRepository;
     }
 
-    @GetMapping
+    @GetMapping("/chat")
     public List<Message> getAllMessages() {
         return messageRepository.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/chat")
     public void createMessage(@RequestBody Message message) {
         messageRepository.save(message);
     }
