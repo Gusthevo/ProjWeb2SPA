@@ -19,9 +19,16 @@ public class RegisterUserController {
     @Autowired
     private UserRepository userRepository;
 
+    @PostMapping("/check-email-exists")
+    public ResponseEntity<Boolean> checkEmailExists(@RequestBody User user) {
+        boolean emailExists = userRepository.existsByEmail(user.getEmail());
+        return ResponseEntity.ok(emailExists);
+    }
+
     @PostMapping("/register")
     public ResponseEntity<User> registerUser(@RequestBody User user) {
         System.out.println("Controlador de cadastro chamado");
+        user.setimageURL(user.getimageURL());
         return ResponseEntity.ok(userRepository.save(user));
     }
 }

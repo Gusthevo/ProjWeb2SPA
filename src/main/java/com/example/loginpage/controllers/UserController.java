@@ -20,7 +20,7 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody User userData) {
         System.out.println(userData);
-        User user = userRepository.findByUsuario(userData.getUsuario());
+        User user = userRepository.findByEmail(userData.getEmail());
         if (user.getPassword().equals(userData.getPassword())) {
         return ResponseEntity.ok(user);
     }

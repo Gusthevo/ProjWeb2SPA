@@ -1,7 +1,6 @@
-package com.example.loginpage.model;
+    package com.example.loginpage.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+    import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -10,67 +9,76 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
-@AllArgsConstructor
-@Data
-@NoArgsConstructor
-@Table(name = "usuario1")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String email;
-    private String usuario;
-    private String password;
-    private String confirm_password;
-    private String gender;
+    @Entity
+    @AllArgsConstructor
+    @Data
+    @NoArgsConstructor
+    @Table(name = "usuario1")
+    public class User {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private int id;
+        private String email;
+        private String usuario;
+        private String password;
+        private String confirm_password;
+        private String gender;
+        private String imageURL;
 
-    public int getId() {
-        return id;
-    }
+          public String getimageURL() {
+            return imageURL;
+        }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+        public void setimageURL(String imageURL) {
+            this.imageURL = imageURL;
+        }
 
-    public String getEmail() {
-        return email;
-    }
+        public int getId() {
+            return id;
+        }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+        public void setId(int id) {
+            this.id = id;
+        }
 
-    public String getUsuario() {
-        return usuario;
-    }
+        public String getEmail() {
+            return email;
+        }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
+        public void setEmail(String email) {
+            this.email = email;
+        }
 
-    public String getPassword() {
-        return password;
-    }
+        public String getUsuario() {
+            return usuario;
+        }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+        public void setUsuario(String usuario) {
+            this.usuario = usuario;
+        }
 
-    public String getConfirmPassword() {
-        return confirm_password;
-    }
+        public String getPassword() {
+            return password;
+        }
 
-    public void setConfirmPassword(String confirm_password) {
-        this.confirm_password = confirm_password;
-    }
+        public void setPassword(String password) {
+            this.password = password;
+        }
 
-    public String getGender() {
-        return gender;
-    }
+        public String getConfirmPassword() {
+            return confirm_password;
+        }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+        public void setConfirmPassword(String confirm_password) {
+            this.confirm_password = confirm_password;
+        }
+
+        public String getGender() {
+            return gender;
+        }
+
+        public void setGender(String gender) {
+            this.gender = gender;
+        }
     }
-}
 
